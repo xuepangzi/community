@@ -22,7 +22,6 @@ public class GitHubProvider {
                 .build();
         try (Response response = client.newCall(request).execute()) {
             String str = response.body().string().split("&")[0].split("=")[1];
-            System.out.println(str);
             return str;
         } catch (IOException e) {
         }
